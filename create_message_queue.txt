@@ -1,0 +1,17 @@
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <stdlib.h>
+#include<stdio.h>
+
+int main()
+{
+        int mqid;
+        mqid = msgget((key_t)12 , IPC_CREAT);
+        if(mqid < 0 ){
+                printf("Message creation failed");
+                exit(0);
+        }
+        printf("message queue created with id %d",mqid);
+        return 0;
+}

@@ -1,0 +1,8 @@
+#include<stdio.h>
+
+int main(){
+
+        int pid = getpid();
+        printf("The process id is %d",pid);
+        return 0;
+}

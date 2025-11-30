@@ -1,0 +1,16 @@
+echo "Enter number of element"
+read n
+
+echo "Enter elemetns"
+for((i=0;i<n;i++))
+do
+        read a[$i]
+done
+
+echo
+echo "Reversed araay"
+
+for((i=n-1;i>=0;i--))
+do
+        echo ${a[$i]}
+done

@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<sys/ipc.h>
+#include<sys/msg.h>
+#include<sys/types.h>
+
+int main(){
+        int mqid;
+        for(int i = 0; i < 5 ;i++){
+                mqid = msgget((key_t)i , IPC_CREAT);
+
+                if(mqid < 0){
+                        printf("Message creation failed");
+                        exit(0);
+                }
+                printf("Message created with iid : %d \n",mqid);
+
+        }
+        return 0;
+}
+~

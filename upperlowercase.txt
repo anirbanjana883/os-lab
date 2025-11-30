@@ -1,0 +1,10 @@
+echo "Enter the character"
+read c
+
+case $c in
+        [[:digit:]]) echo "$c is a digit";;
+        [[:upper:]]) echo "$c is a upercase";;
+        [[:lower:]]) echo "$c is a lowercase";;
+        *) echo "$c is ather"
+esac
+~

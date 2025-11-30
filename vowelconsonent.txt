@@ -1,0 +1,11 @@
+echo "Enter the character"
+read c
+
+case $c in
+        a) echo "vowel";;
+        e) echo "vowel";;
+        i) echo "cowel";;
+        o) echo "vowel";;
+        u) echo "vowel";;
+        *) echo "consonent";;
+esac

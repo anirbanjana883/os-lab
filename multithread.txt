@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<pthread.h>
+
+void *msg1(){
+	printf("this is a message form thread 1 .........\n");
+	return NULL;
+}
+void *msg2(){
+	printf("this is message from thraed 2 ...........\n");
+	return NULL;
+}
+
+int main(){
+	pthread_t t1,t2;;
+
+	pthread_create(&t1,NULL,msg1,NULL);
+	pthread_create(&t2,NULL,msg2,NULL);
+
+	pthread_join(t1,NULL);
+	pthread_join(t2,NULL);
+	return 0;
+}
