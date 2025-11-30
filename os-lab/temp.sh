@@ -1,0 +1,7 @@
+echo "Enter temperature in celcious"
+read c
+a=`expr $c \* 9`
+b=`expr $a / 5`
+d=`expr $b + 32`
+
+echo "Temperature in ferenhite is $d"

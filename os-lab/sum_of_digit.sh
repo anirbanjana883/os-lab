@@ -1,0 +1,15 @@
+echo "Enter the number"
+read num
+
+n=$num
+
+sum=0
+
+while [ $n -ne 0 ]
+do
+	digit=`expr $n % 10 `
+	sum=`expr $sum + $digit`
+	n=`expr $n / 10 `
+done
+
+echo "The sum of digit is $sum"

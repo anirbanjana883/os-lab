@@ -1,0 +1,77 @@
+echo "enter number of element"
+read n
+
+echo "Enter elements in sorted order"
+for ((i = 0; i < n; i++))
+do
+    read a[$i]
+done
+
+echo "Enter target"
+read target
+
+idx=-1
+left=0
+right=$((n - 1))
+
+while [ $left -le $right ]
+do
+    mid=$(( (left + right) / 2 ))
+
+    if [ ${a[$mid]} -eq $target ]
+    then
+        idx=$mid
+        break
+    elif [ ${a[$mid]} -lt $target ]
+    then
+        left=$((mid + 1))
+    else
+        right=$((mid - 1))
+    fi
+done
+
+if [ $idx -eq -1 ]
+then
+    echo "target not found"
+else
+    echo "target found at index $idx"
+fi
+echo "enter number of element"
+read n
+
+echo "Enter elements in sorted order"
+for ((i = 0; i < n; i++))
+do
+    read a[$i]
+done
+
+echo "Enter target"
+read target
+
+idx=-1
+left=0
+right=$((n - 1))
+
+while [ $left -le $right ]
+do
+    mid=$(( (left + right) / 2 ))
+
+    if [ ${a[$mid]} -eq $target ]
+    then
+        idx=$mid
+        break
+    elif [ ${a[$mid]} -lt $target ]
+    then
+        left=$((mid + 1))
+    else
+        right=$((mid - 1))
+    fi
+done
+
+if [ $idx -eq -1 ]
+then
+    echo "target not found"
+else
+    echo "target found at index $idx"
+fi
+

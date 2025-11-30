@@ -1,0 +1,18 @@
+echo "Echo first number"
+read a
+echo "Echo second number"
+read b
+
+echo "1.Addition 2.Substraction 3.Multiplication 4.Division"
+
+echo "Enter choice"
+read c
+
+case $c in 
+	1) echo "Addition result :`expr $a + $b`";;
+	2) echo "Addition result :`expr $a - $b`";;
+	3) echo "Addition result :`expr $a *\ $b`";;
+	4) echo "Addition result :`expr $a / $b`";;
+	*) echo "Wrong choice";;
+esac
+

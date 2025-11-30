@@ -1,0 +1,7 @@
+echo "Enter number"
+read num
+echo "Enter power"
+read p
+
+c=$(echo "$num ^ $p"|bc)
+echo "$num to the power $p is $c"
