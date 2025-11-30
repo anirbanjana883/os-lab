@@ -1,0 +1,11 @@
+echo "Enter first number"
+read a
+echo "Enter second number"
+read b
+
+if [ `expr $a -gt $b` ]
+then
+        echo "$a is greater then $b"
+else
+        echo "$a is less then $b"
+fi

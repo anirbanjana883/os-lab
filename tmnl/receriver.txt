@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<sys/types.h>
+#include<sys/msg.h>
+#include<sys/ipc.h>
+#include<string.h>
+
+struct msgbuf{
+        long mtype;
+        char mtext[100];
+};
+
+int main()
+{
+        struct msgbuf message;
+
+        int mqid = msgget((key_t)15,IPC_CREAT|0666);
+
+        if(mqid < 0){
+                printf("Error in accessing message\n");
+                exit(1);
+        }
+
+        if(msgrcv(mqid,&message,sizeof(message.mtext),1,0) == -1){
+                printf("Error in receiving message \n");
+                exit(1);
+        }
+        printf("The received message is \n %s \n",message.mtext);
+        return 0;
+}
+~

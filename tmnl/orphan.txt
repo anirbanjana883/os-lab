@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main() {
+    pid_t pid;
+    pid = fork();
+
+    if (pid < 0) {
+        printf("Process creation failed\n");
+        exit(1);
+    }
+    else if (pid == 0) {
+        sleep(5);
+        printf("Child Process\n");
+        printf("Child process id : %d\n", getpid());
+        printf("New parent process id (after orphaned) : %d\n", getppid());
+    }
+    else {
+        printf("Parent process\n");
+        printf("Parent process id : %d\n", getpid());
+        printf("Old Parent is exiting soon ...\n");
+        exit(0);
+    }
+
+    return 0;
+}

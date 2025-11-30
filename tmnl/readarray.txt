@@ -1,0 +1,17 @@
+echo "Enter number of lelemtn in array"
+read n
+
+echo "Enter array element"
+echo
+
+for((i=0;i<n;i++))
+do
+        read a[$i]
+done
+
+echo "Array elemts are "
+
+for((i=0;i<n;i++))
+do
+        echo ${a[$i]}
+done
